@@ -13,37 +13,14 @@ import { Card } from "./components";
 
 const data: any[] = [];
 
-for (let i = 1; i < 100; i += 4) {
-  data.push([
-    {
-      id: i,
-      name: `name ${i}`,
-      gen: "1 gen",
-      types: ["water"],
-      img: `https://pokego.ru/img/pokemon/${i}.png`,
-    },
-    {
-      id: i + 1,
-      name: `name ${i + 1}`,
-      gen: "1 gen",
-      types: ["water"],
-      img: `https://pokego.ru/img/pokemon/${i + 1}.png`,
-    },
-    {
-      id: i + 2,
-      name: `name ${i + 2}`,
-      gen: "1 gen",
-      types: ["water"],
-      img: `https://pokego.ru/img/pokemon/${i + 2}.png`,
-    },
-    {
-      id: i + 3,
-      name: `name ${i + 3}`,
-      gen: "1 gen",
-      types: ["water"],
-      img: `https://pokego.ru/img/pokemon/${i + 3}.png`,
-    },
-  ]);
+for (let i = 1; i < 100; i++) {
+  data.push({
+    id: i,
+    name: `name ${i}`,
+    gen: "1 gen",
+    types: ["water"],
+    img: `https://pokego.ru/img/pokemon/${i}.png`,
+  });
 }
 
 export default function App() {
@@ -51,22 +28,20 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text>Filters</Text>
       <FlatList
+        style={styles.cardWrapper}
         data={data}
-        keyExtractor={(item, index) => item[0].id.toString()}
+        keyExtractor={(item) => item.id}
+        numColumns={4}
         renderItem={({ item }) => (
-          <View style={styles.cardWrapper} key={item[0].id}>
-            {item.map((pokemon: any) => (
-              <Card
-                key={pokemon.id}
-                pokedex={pokemon.id}
-                gen={pokemon.gen}
-                types={pokemon.types}
-                name={pokemon.name}
-                img={pokemon.img}
-                onPress={() => alert(pokemon.id)}
-              />
-            ))}
-          </View>
+          <Card
+            key={item.id}
+            pokedex={item.id}
+            gen={item.gen}
+            types={item.types}
+            name={item.name}
+            img={item.img}
+            onPress={() => alert(item.id)}
+          />
         )}
       />
       <StatusBarExpo style="auto" />
@@ -85,8 +60,5 @@ const styles = StyleSheet.create({
   cardWrapper: {
     paddingLeft: 10,
     paddingRight: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    flexWrap: "wrap",
   },
 });
