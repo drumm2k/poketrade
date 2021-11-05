@@ -1,2 +1,2 @@
-export { default as HomeScreen } from "./Home";
-export { default as TradeScreen } from "./Trade";
+export { default as HomeScreen } from './Home'
+export { default as TradeScreen } from './Trade'

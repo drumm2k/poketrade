@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import React from 'react'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
 const Home = ({ navigation }: { navigation: any }) => {
   return (
@@ -7,19 +7,19 @@ const Home = ({ navigation }: { navigation: any }) => {
       <Text>Home screen</Text>
       <Button
         title="Go to Trades"
-        onPress={() => navigation.navigate("Trade")}
+        onPress={() => navigation.navigate('Trade')}
       />
     </View>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+})

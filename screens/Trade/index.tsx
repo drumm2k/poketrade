@@ -1,18 +1,18 @@
-import React from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import React from 'react'
+import { StyleSheet, View, Text, FlatList } from 'react-native'
 
-import { Card } from "../../components";
+import { Card } from '../../components'
 
-const data: any[] = [];
+const data: any[] = []
 
 for (let i = 1; i < 100; i++) {
   data.push({
     id: i,
     name: `name ${i}`,
-    gen: "1 gen",
-    types: ["water"],
-    img: `https://pokego.ru/img/pokemon/${i}.png`,
-  });
+    gen: '1 gen',
+    types: ['water'],
+    img: `https://pokego.ru/img/pokemon/${i}.png`
+  })
 }
 
 const Trade = () => {
@@ -37,20 +37,20 @@ const Trade = () => {
         )}
       />
     </View>
-  );
-};
+  )
+}
 
-export default Trade;
+export default Trade
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   cardWrapper: {
     paddingLeft: 10,
-    paddingRight: 10,
-  },
-});
+    paddingRight: 10
+  }
+})
